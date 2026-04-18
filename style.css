@@ -1,0 +1,123 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f1f1;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+.stats {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+button,
+select {
+  padding: 8px 16px;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover,
+select:hover {
+  background: #555;
+}
+
+.game {
+  margin: auto;
+  display: grid;
+  gap: 10px;
+  width: min(90%, 500px);
+}
+
+.card {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+  perspective: 600px;
+  cursor: pointer;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.4s;
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+
+.front {
+  background: #333;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.back img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* flip animation */
+.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+/* match animation */
+.match {
+  animation: glow 0.6s ease-out;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0px #00ff9d;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px #00ff9d;
+    transform: scale(1.07);
+  }
+  100% {
+    box-shadow: 0 0 0px #00ff9d;
+    transform: scale(1);
+  }
+}
+
+/* win popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 260px;
+}

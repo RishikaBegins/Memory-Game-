@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Memory Game</h1>
+
+    <div class="stats">
+      <div>⏳ Time: <span id="time">0</span>s</div>
+      <div>🔄 Moves: <span id="moves">0</span></div>
+
+      <select id="difficulty">
+        <option value="4">Easy (4×4)</option>
+        <option value="6">Medium (6×6)</option>
+        <option value="8">Hard (8×8)</option>
+      </select>
+
+      <button id="restart">Restart</button>
+    </div>
+
+    <div class="game"></div>
+
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <h2>🎉 You Win!</h2>
+        <p>Time: <span id="finalTime"></span>s</p>
+        <p>Moves: <span id="finalMoves"></span></p>
+        <button onclick="restartGame()">Play Again</button>
+      </div>
+    </div>
+
+    <audio
+      id="flipSound"
+      src="https://cdn.pixabay.com/audio/2022/03/15/audio_4bbd07e504.mp3"></audio>
+    <audio
+      id="matchSound"
+      src="https://cdn.pixabay.com/audio/2021/09/18/audio_0aa8a8cbd3.mp3"></audio>
+    <audio
+      id="winSound"
+      src="https://cdn.pixabay.com/audio/2022/03/15/audio_61a55fcf06.mp3"></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
